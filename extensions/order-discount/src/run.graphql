@@ -1,0 +1,21 @@
+query RunInput {
+  cart {
+    lines {
+      quantity
+      merchandise {
+        __typename
+        ...on ProductVariant {
+            id
+        }
+      }
+    }
+    buyerIdentity {
+      customer {
+        hasTags(tags: ["ゴールド会員"]) {
+          hasTag
+          tag
+        }
+      }
+    }
+  }
+}
